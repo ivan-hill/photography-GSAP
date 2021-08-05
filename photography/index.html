@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="shortcut icon" href="favicon/favicon.png" type="image/x-icon">
+	<title>Adam Grimm | A Grimm Arts LLC</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="toggleBtn">
+		<img class="menu-icon" src="images/menu-icon.svg" alt="">
+		<img class="close-icon" src="images/close-icon.svg" alt="">
+	</div>
+	<div class="menu">
+		<nav>
+			<ul>
+				<li><a href="#">HOME</a></li>
+				<li><a href="./slideshow/GALLERY.html">GALLERY</a></li>
+				<li><a href="#">CONTACT</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="wrapper">
+		<div class="text">
+			<div class="text-inner">
+				<h1>Adam Grimm</h1>
+				<p>A Grimm Arts LLC</p>
+				<a href="#" class="btn">Contact Me</a>
+				<div class="social">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="img">
+			<div class="img-stripe stripe1">
+				<img src="images/1.jpg" alt="">
+				<img src="images/2.jpg" alt="">
+				<img src="images/3.jpg" alt="">
+				<img src="images/4.jpg" alt="">
+				<img src="images/5.jpg" alt="">
+				<img src="images/6.jpg" alt="">
+			</div>
+			<div class="img-stripe stripe2">
+				<img src="images/7.jpg" alt="">
+				<img src="images/8.jpg" alt="">
+				<img src="images/9.jpg" alt="">
+				<img src="images/10.jpg" alt="">
+				<img src="images/11.jpg" alt="">
+				<img src="images/12.jpg" alt="">
+			</div>
+		</div>
+	</div>
+
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+<script>
+	
+	var toggleBtn = document.querySelector(".toggleBtn");
+	var menu = document.querySelector(".menu");
+
+
+	// INTRO - LANDING ANIMATION
+	gsap.from(".text-inner > *", 2, {
+		opacity: 0,
+		delay: 1,
+		stagger: 0.2
+	})
+	gsap.from(".toggleBtn", 1, {
+		x: -150,
+		y: - 150,
+		delay: 1.4
+	})
+	gsap.from(".stripe1 img", 2, {
+		y: 400,
+		opacity: 0,
+		stagger: 0.2,
+		delay: 2
+	})
+	gsap.from(".stripe2 img", 2, {
+		opacity: 0,
+		stagger: 0.4,
+		delay: 3
+	})
+	
+
+
+
+
+
+	// MENU ANIMATION
+	var tl = new TimelineMax({paused: true});
+
+	tl.to(".menu-icon", 1.2, {
+		opacity: 0,
+		rotation: 180
+	})
+
+	tl.to(".close-icon", 1.4, {
+		opacity: 1,
+		rotation: 180
+	}, "-=0.9")
+
+	tl.to(".menu", 1.6, {
+		scale: 1
+	}, "-=1")
+
+	tl.from(".menu li", 1.6, {  /*From = 0 to 1*/
+		opacity: 0,
+		x: -100,
+		stagger: .4
+	})
+
+
+
+	tl.reverse();
+
+	toggleBtn.onclick = function(){
+		tl.reversed(!tl.reversed());
+	}
+
+
+</script>
+<script src="./slideshow/js/imagesloaded.pkgd.min.js"></script>
+</body>
+</html>
