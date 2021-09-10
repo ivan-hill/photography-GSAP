@@ -81,12 +81,12 @@
 		y: 400,
 		opacity: 0,
 		stagger: 0.2,
-		delay: 2
+		delay: 0.7
 	})
 	gsap.from(".stripe2 img", 2, {
 		opacity: 0,
-		stagger: 0.4,
-		delay: 3
+		stagger: 0.2,
+		delay: 1
 	})
 	
 
@@ -97,21 +97,21 @@
 	// MENU ANIMATION
 	var tl = new TimelineMax({paused: true});
 
-	tl.to(".menu-icon", 1.2, {
+	tl.to(".menu-icon", 0.4, {
 		opacity: 0,
 		rotation: 180
 	})
 
-	tl.to(".close-icon", 1.4, {
+	tl.to(".close-icon", 1.1, {
 		opacity: 1,
 		rotation: 180
 	}, "-=0.9")
 
-	tl.to(".menu", 1.6, {
+	tl.to(".menu", 0.9, {
 		scale: 1
 	}, "-=1")
 
-	tl.from(".menu li", 1.6, {  /*From = 0 to 1*/
+	tl.from(".menu li", 1.2, {  /*From = 0 to 1*/
 		opacity: 0,
 		x: -100,
 		stagger: .4
